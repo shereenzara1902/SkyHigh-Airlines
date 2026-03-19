@@ -1,164 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkyHigh Airlines | Domestic India Booking</title>
-  <link rel="icon" href="https://img.icons8.com/ios-filled/50/003580/airplane-mode-on.png" type="image/png">
-  <link rel="stylesheet" href="style.css?v=2">
-  <style>
-    /* Ensures the footer stays professional and separate */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 60px;
-      border-top: 1px solid #ddd;
-      background-color: #fcfcfc;
-      color: #666;
-      font-family: Arial, sans-serif;
-    }
-    .disclaimer-text {
-      font-size: 12px;
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 10px auto 0 auto;
-      opacity: 0.8;
-    }
-    .copyright {
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #333;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVIATION_SUITE | OPS_CORE_v3.1</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>✈️ SkyHigh Airlines</h1>
-    <p>Connecting India: Your Gateway to the Skies</p>
-  </header>
 
-  <main>
-    <section class="flight-search">
-      <h2>Book Domestic Flights</h2>
-      <form id="flightForm">
-        <div class="form-row">
-            <div class="form-group">
-              <label for="from">From (Origin):</label>
-              <select id="from" required>
-                <option value="" disabled selected>Select Origin</option>
-                <option value="Agartala">Agartala (IXA)</option>
-                <option value="Ahmedabad">Ahmedabad (AMD)</option>
-                <option value="Amritsar">Amritsar (ATQ)</option>
-                <option value="Bangalore">Bangalore (BLR)</option>
-                <option value="Bhopal">Bhopal (BHO)</option>
-                <option value="Bhubaneswar">Bhubaneswar (BBI)</option>
-                <option value="Chandigarh">Chandigarh (IXC)</option>
-                <option value="Chennai">Chennai (MAA)</option>
-                <option value="Delhi">Delhi (DEL)</option>
-                <option value="Goa">Goa (GOI)</option>
-                <option value="Guwahati">Guwahati (GAU)</option>
-                <option value="Hyderabad">Hyderabad (HYD)</option>
-                <option value="Imphal">Imphal (IMF)</option>
-                <option value="Indore">Indore (IDR)</option>
-                <option value="Jaipur">Jaipur (JAI)</option>
-                <option value="Kochi">Kochi (COK)</option>
-                <option value="Kolkata">Kolkata (CCU)</option>
-                <option value="Lucknow">Lucknow (LKO)</option>
-                <option value="Mumbai">Mumbai (BOM)</option>
-                <option value="Patna">Patna (PAT)</option>
-                <option value="Pune">Pune (PNQ)</option>
-                <option value="Srinagar">Srinagar (SXR)</option>
-                <option value="Varanasi">Varanasi (VNS)</option>
-              </select>
+    <div class="app-wrapper">
+        <header class="status-bar">
+            <div class="branding">AVIATION_SUITE_<span class="highlight">OPS</span></div>
+            <div class="system-metrics">
+                <span class="metric">SAT_LINK: <span class="active">CONNECTED</span></span>
+                <span class="metric">TIME: <span id="clock">00:00:00</span></span>
             </div>
-            <div class="form-group">
-              <label for="to">To (Destination):</label>
-              <select id="to" required>
-                <option value="" disabled selected>Select Destination</option>
-                <option value="Agartala">Agartala (IXA)</option>
-                <option value="Ahmedabad">Ahmedabad (AMD)</option>
-                <option value="Amritsar">Amritsar (ATQ)</option>
-                <option value="Bangalore">Bangalore (BLR)</option>
-                <option value="Bhopal">Bhopal (BHO)</option>
-                <option value="Bhubaneswar">Bhubaneswar (BBI)</option>
-                <option value="Chandigarh">Chandigarh (IXC)</option>
-                <option value="Chennai">Chennai (MAA)</option>
-                <option value="Delhi">Delhi (DEL)</option>
-                <option value="Goa">Goa (GOI)</option>
-                <option value="Guwahati">Guwahati (GAU)</option>
-                <option value="Hyderabad">Hyderabad (HYD)</option>
-                <option value="Imphal">Imphal (IMF)</option>
-                <option value="Indore">Indore (IDR)</option>
-                <option value="Jaipur">Jaipur (JAI)</option>
-                <option value="Kochi">Kochi (COK)</option>
-                <option value="Kolkata">Kolkata (CCU)</option>
-                <option value="Lucknow">Lucknow (LKO)</option>
-                <option value="Mumbai">Mumbai (BOM)</option>
-                <option value="Patna">Patna (PAT)</option>
-                <option value="Pune">Pune (PNQ)</option>
-                <option value="Srinagar">Srinagar (SXR)</option>
-                <option value="Varanasi">Varanasi (VNS)</option>
-              </select>
+        </header>
+
+        <main class="workspace">
+            <section class="panel crew-panel">
+                <div class="panel-header">ASSET_INVENTORY [CREW]</div>
+                <div class="search-box">
+                    <input type="text" placeholder="FILTER_BY_UID..." id="crewSearch">
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>UID</th><th>NAME</th><th>STATUS</th></tr>
+                        </thead>
+                        <tbody id="crew-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel ops-panel">
+                <div class="panel-header">LIVE_OPERATIONS_RADAR</div>
+                <div id="flight-grid" class="flight-grid"></div>
+            </section>
+        </main>
+
+        <footer class="system-logs">
+            <div class="ticker">
+                <span class="prefix">SYS_LOG:</span>
+                <marquee id="log-text">Initializing Secure Satellite Uplink... Database v3.1 Synced... Monitoring 128 Active Sectors...</marquee>
             </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-              <label for="date">Travel Date:</label>
-              <input type="date" id="date" required>
-            </div>
-            <div class="form-group">
-              <label for="travelClass">Travel Class:</label>
-              <select id="travelClass" onchange="updateClassDetails()" required>
-                <option value="Economy">Economy</option>
-                <option value="Premium Economy">Premium Economy</option>
-                <option value="Business">Business Class</option>
-                <option value="First Class">First Class</option>
-              </select>
-            </div>
-        </div>
-
-        <div id="classDescBox" class="class-desc-box">
-            💼 <strong>Economy:</strong> 15kg baggage, standard seat, and complimentary water.
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label for="passengers">Passengers:</label>
-                <input type="number" id="passengers" min="1" max="9" value="1" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Mobile Number:</label>
-                <input type="tel" id="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-            </div>
-        </div>
-        
-        <button type="submit" id="searchBtn">Find Domestic Flights</button>
-      </form>
-    </section>
-
-    <section class="flights-list" id="flightsList">
-      <h3>Available Domestic Fares</h3>
-      <div id="flightCards">
-          <p class="placeholder-text">Please select your origin and destination to view fares.</p>
-      </div>
-    </section>
-
-    <section class="booking-summary" id="summarySection" style="display:none;">
-      <h3>E-Ticket Confirmation</h3>
-      <div id="summary"></div>
-      <button onclick="window.location.reload()" class="btn-reset">Search New Route</button>
-    </section>
-  </main>
-
-  <footer>
-    <p class="copyright">&copy; 2026 SkyHigh Domestic Airlines | Developed by Shereen Zara</p>
-    <div class="disclaimer-text">
-      <strong>Disclaimer:</strong> This website is a <strong>fictional project</strong> developed for portfolio purposes to demonstrate front-end engineering and UI logic. It is not a real airline and does not provide actual flight services or process real payments.
+        </footer>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
