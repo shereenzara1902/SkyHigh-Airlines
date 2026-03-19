@@ -1,0 +1,15 @@
+body { font-family: 'Segoe UI', sans-serif; background-color: #f0f4f7; margin: 0; }
+header { background: linear-gradient(135deg, #003580 0%, #005bb5 100%); color: white; text-align: center; padding: 50px 20px; }
+.flight-search, .flights-list, .booking-summary { background: white; max-width: 650px; margin: -40px auto 30px; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+.form-row { display: flex; gap: 15px; margin-bottom: 15px; }
+.form-group { flex: 1; }
+label { display: block; font-weight: bold; margin-bottom: 8px; color: #003580; font-size: 0.9rem; }
+select, input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; box-sizing: border-box; }
+.class-desc-box { background-color: #eef6ff; padding: 15px; border-radius: 6px; font-size: 0.85rem; margin-bottom: 20px; border-left: 5px solid #ff6600; }
+button { width: 100%; padding: 15px; background-color: #ff6600; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+button:hover { background-color: #e65c00; }
+.btn-reset { background-color: #003580; margin-top: 20px; }
+.flight-card { border: 1px solid #eee; padding: 20px; margin-top: 15px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; border-left: 6px solid #003580; }
+.price-tag { color: #2ecc71; font-weight: bold; font-size: 1.5rem; }
+footer { text-align: center; padding: 40px; color: #95a5a6; font-size: 0.8rem; }
+@media (max-width: 600px) { .form-row { flex-direction: column; } }

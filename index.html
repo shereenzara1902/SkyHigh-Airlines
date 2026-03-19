@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyHigh Airlines | Domestic India Booking</title>
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/003580/airplane-mode-on.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>✈️ SkyHigh Airlines</h1>
+    <p>Connecting India: Your Gateway to the Skies</p>
+  </header>
+
+  <main>
+    <section class="flight-search">
+      <h2>Book Domestic Flights</h2>
+      <form id="flightForm">
+        <div class="form-row">
+            <div class="form-group">
+              <label for="from">From (Origin):</label>
+              <select id="from" required>
+                <option value="" disabled selected>Select Origin</option>
+                <option value="Agartala">Agartala (IXA)</option>
+                <option value="Ahmedabad">Ahmedabad (AMD)</option>
+                <option value="Amritsar">Amritsar (ATQ)</option>
+                <option value="Bangalore">Bangalore (BLR)</option>
+                <option value="Bhopal">Bhopal (BHO)</option>
+                <option value="Bhubaneswar">Bhubaneswar (BBI)</option>
+                <option value="Chandigarh">Chandigarh (IXC)</option>
+                <option value="Chennai">Chennai (MAA)</option>
+                <option value="Delhi">Delhi (DEL)</option>
+                <option value="Goa">Goa (GOI)</option>
+                <option value="Guwahati">Guwahati (GAU)</option>
+                <option value="Hyderabad">Hyderabad (HYD)</option>
+                <option value="Imphal">Imphal (IMF)</option>
+                <option value="Indore">Indore (IDR)</option>
+                <option value="Jaipur">Jaipur (JAI)</option>
+                <option value="Kochi">Kochi (COK)</option>
+                <option value="Kolkata">Kolkata (CCU)</option>
+                <option value="Lucknow">Lucknow (LKO)</option>
+                <option value="Mumbai">Mumbai (BOM)</option>
+                <option value="Patna">Patna (PAT)</option>
+                <option value="Pune">Pune (PNQ)</option>
+                <option value="Srinagar">Srinagar (SXR)</option>
+                <option value="Varanasi">Varanasi (VNS)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="to">To (Destination):</label>
+              <select id="to" required>
+                <option value="" disabled selected>Select Destination</option>
+                <option value="Agartala">Agartala (IXA)</option>
+                <option value="Ahmedabad">Ahmedabad (AMD)</option>
+                <option value="Amritsar">Amritsar (ATQ)</option>
+                <option value="Bangalore">Bangalore (BLR)</option>
+                <option value="Bhopal">Bhopal (BHO)</option>
+                <option value="Bhubaneswar">Bhubaneswar (BBI)</option>
+                <option value="Chandigarh">Chandigarh (IXC)</option>
+                <option value="Chennai">Chennai (MAA)</option>
+                <option value="Delhi">Delhi (DEL)</option>
+                <option value="Goa">Goa (GOI)</option>
+                <option value="Guwahati">Guwahati (GAU)</option>
+                <option value="Hyderabad">Hyderabad (HYD)</option>
+                <option value="Imphal">Imphal (IMF)</option>
+                <option value="Indore">Indore (IDR)</option>
+                <option value="Jaipur">Jaipur (JAI)</option>
+                <option value="Kochi">Kochi (COK)</option>
+                <option value="Kolkata">Kolkata (CCU)</option>
+                <option value="Lucknow">Lucknow (LKO)</option>
+                <option value="Mumbai">Mumbai (BOM)</option>
+                <option value="Patna">Patna (PAT)</option>
+                <option value="Pune">Pune (PNQ)</option>
+                <option value="Srinagar">Srinagar (SXR)</option>
+                <option value="Varanasi">Varanasi (VNS)</option>
+              </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+              <label for="date">Travel Date:</label>
+              <input type="date" id="date" required>
+            </div>
+            <div class="form-group">
+              <label for="travelClass">Travel Class:</label>
+              <select id="travelClass" onchange="updateClassDetails()" required>
+                <option value="Economy">Economy</option>
+                <option value="Premium Economy">Premium Economy</option>
+                <option value="Business">Business Class</option>
+                <option value="First Class">First Class</option>
+              </select>
+            </div>
+        </div>
+
+        <div id="classDescBox" class="class-desc-box">
+            💼 <strong>Economy:</strong> 15kg baggage, standard seat, and complimentary water.
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="passengers">Passengers:</label>
+                <input type="number" id="passengers" min="1" max="9" value="1" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Mobile Number:</label>
+                <input type="tel" id="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+            </div>
+        </div>
+        
+        <button type="submit" id="searchBtn">Find Domestic Flights</button>
+      </form>
+    </section>
+
+    <section class="flights-list" id="flightsList">
+      <h3>Available Domestic Fares</h3>
+      <div id="flightCards">
+          <p class="placeholder-text">Please select your origin and destination to view fares.</p>
+      </div>
+    </section>
+
+    <section class="booking-summary" id="summarySection" style="display:none;">
+      <h3>E-Ticket Confirmation</h3>
+      <div id="summary"></div>
+      <button onclick="window.location.reload()" class="btn-reset">Search New Route</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 SkyHigh Domestic Airlines | Developed by Shereen Zara</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
